@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="top-nav">
+        <a href="home.html">🏠 Home</a>
+        <a href="login.html">🔑 Login</a>
+        <a href="registration.html" class="active">📝 Register</a>
+        <a href="profile.html">👤 Profile</a>
+        <a href="courses.html">📚 Courses</a>
+        <a href="tables.html">📅 Timetable</a>
+        <a href="feedback.html">💬 Feedback</a>
+        <a href="contact.html">📞 Contact</a>
+    </div>
+
+    <h2>📝 Student Registration Form</h2>
+
+    <div id="alertBox" class="alert alert-success">Registration successful! Redirecting to Login...</div>
+
+    <form id="regForm" onsubmit="handleRegistration(event)">
+
+        <div>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+
+        <div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Create a password" required>
+        </div>
+
+        <div>
+            <label>Gender:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+                <label><input type="radio" name="gender" value="Other"> Other</label>
+            </div>
+        </div>
+
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div>
+            <label for="course">Course:</label>
+            <select id="course" name="course" required>
+                <option value="">Select Course</option>
+                <option value="BCA">BCA</option>
+                <option value="MCA">MCA</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="M.Tech">M.Tech</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Skills:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="skills" value="Java"> Java</label>
+                <label><input type="checkbox" name="skills" value="Python"> Python</label>
+                <label><input type="checkbox" name="skills" value="HTML"> HTML</label>
+                <label><input type="checkbox" name="skills" value="SQL"> SQL</label>
+            </div>
+        </div>
+
+        <div>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" placeholder="Enter your address" required></textarea>
+        </div>
+
+        <div class="button-group">
+            <input type="submit" value="Register">
+            <input type="reset" value="Reset">
+        </div>
+
+        <p style="margin-top: 16px; font-size: 0.9rem; color: var(--text-secondary);">
+            Already registered? <a href="login.html">Login here</a>
+        </p>
+
+    </form>
+</div>
+
+<script>
+function handleRegistration(event) {
+    event.preventDefault();
+    const alertBox = document.getElementById('alertBox');
+    alertBox.style.display = 'block';
+    setTimeout(() => {
+        window.location.href = 'login.html';
+    }, 1200);
+}
+</script>
+
+</body>
+</html>
